@@ -1,6 +1,7 @@
 package com.bridgelabz;
 
 import com.bridgelabz.component.DemoBean;
+import com.bridgelabz.component.EmployeeBean;
 import com.bridgelabz.controller.HelloRestController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,5 +26,9 @@ public class HelloSpringAppApplication {
         DemoBean demoBean = context.getBean(DemoBean.class);
         logger.warn("Demo Bean = " + demoBean);
         logger.warn(String.valueOf(context.getBean(HelloRestController.class)));
+        logger.debug("\n** Example Using @Autowired annotation on property ** ");
+        EmployeeBean employeeBean = context.getBean(EmployeeBean.class);
+        employeeBean.showEmployeeDetails();
     }
+
 }
